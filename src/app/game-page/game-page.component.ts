@@ -14,6 +14,6 @@ export class GamePageComponent {
 
   addClicker()
   {
-
+    console.log("+1 click")
   }
 }
