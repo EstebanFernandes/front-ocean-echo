@@ -21,9 +21,6 @@
     height: 100%; /* Prend toute la hauteur disponible */
     align-self: stretch; /* S'assure que l'élément s'étend sur tout le parent */
 }
-#back{
-
-}
 
 .card{
     display: flex;

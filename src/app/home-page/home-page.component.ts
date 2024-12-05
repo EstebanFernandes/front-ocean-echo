@@ -4,10 +4,13 @@ import { ButtonModule } from 'primeng/button'; // import Button Module
 import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
+
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [InputTextModule, ButtonModule, FormsModule, DividerModule,CardModule],
+  imports: [
+    InputTextModule, ButtonModule, FormsModule, DividerModule,
+    CardModule],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
