@@ -1,0 +1,15 @@
+.background{
+
+    position:absolute;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(to right, #e5e5e5, #e5e5e5 1px, transparent 1px, transparent);
+background-size: 10px 10px;
+background-color: #ffffff;
+}
