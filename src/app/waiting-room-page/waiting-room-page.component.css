@@ -1,8 +1,22 @@
-#playerList{
+.playerList{
     display: flex;
     flex-direction: column;
+    gap:6px;
+}
+.global{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 6px;
+    
 }
 
-#cardWaiting{
-    width: 200px
+
+.buttonList{
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: space-evenly;
+    gap: 6px;
 }
