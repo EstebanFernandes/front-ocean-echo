@@ -1,0 +1,8 @@
+#playerList{
+    display: flex;
+    flex-direction: column;
+}
+
+#cardWaiting{
+    width: 200px
+}
