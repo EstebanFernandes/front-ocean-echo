@@ -1,18 +1,18 @@
-<h1 id="title">Ocean Clicker</h1>
-<div class="global">
-    <div class="side">
-
-        <h2>Créer</h2>
-        <input type="text" placeholder="Pseudo" pInputText [(ngModel)]="nameHost" />
-        <p-button (onClick)="createRoom()">Créer</p-button>
-    </div>
-    <div class="side">
-        <p-divider id="divider" layout="vertical"></p-divider>
-    </div>
-    <div class="side">
-        <h2>Rejoindre</h2>
-        <input type="text" pInputText placeholder="Pseudo" [(ngModel)]="nameJoin" />
-        <input type="text" pInputText placeholder="ID Room" [(ngModel)]="nameIdJoin" />
-        <p-button>Rejoindre</p-button>
-    </div>
-</div>
+<div id="back">
+    <h1 id="title">Ocean Clicker</h1>
+    <p-card class="card">
+    <div class="global">
+            <div class="side">
+                <h2>Créer</h2>
+                <input type="text" placeholder="Pseudo" pInputText [(ngModel)]="nameHost" />
+                <p-button (onClick)="createRoom()">Créer</p-button>
+            </div>
+                <p-divider id="divider" layout="vertical"></p-divider>
+            <div class="side">
+                <h2>Rejoindre</h2>
+                <input type="text" pInputText placeholder="Pseudo" [(ngModel)]="nameJoin" />
+                <input type="text" pInputText placeholder="ID Room" [(ngModel)]="nameIdJoin" />
+                <p-button>Rejoindre</p-button>
+            </div>
+        </div>
+    </p-card>

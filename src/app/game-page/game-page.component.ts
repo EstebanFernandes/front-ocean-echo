@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './game-page.component.html',
   styleUrl: './game-page.component.css'
 })
-export class GamePageComponent {
 
+
+export class GamePageComponent {
+  playerName:string="";
+  
 }
