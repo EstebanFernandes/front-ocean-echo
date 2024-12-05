@@ -1,9 +1,11 @@
-import { Component, ElementRef, ViewChild, input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, input } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button'; // import Button Module
 import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
+import { Room } from '../models/room.model';
+import { FetchServiceService } from '../fetch-service.service';
 
 @Component({
   selector: 'app-waiting-room-page',
@@ -13,6 +15,10 @@ import { DividerModule } from 'primeng/divider';
   styleUrl: './waiting-room-page.component.css'
 })
 export class WaitingRoomPageComponent {
+
+  constructor(public fetchService:FetchServiceService){
+  }
+  @Input() room!:Room;
   idRoom: number = 0
   playerList: string[]  = []
   hostId: number = 0

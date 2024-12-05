@@ -1,20 +1,14 @@
-<h1 id="title">Id Room: {{idRoom}}</h1>
+<h1 id="title">Id Room: {{room.id}}</h1>
 <div class="global">
     <div>
-
-
         <p-card class="playerList" header="Waiting Room" class="cardWaiting">
-            @for (playername of playerList; track playername; let idx = $index) {
+            @for (player of room.playerList; track room; let idx = $index) {
                 @if (idx!==playerList.length && idx!==0) {
                     <p-divider id="divider" layout="horizontal"></p-divider>
                     }
-                <div>{{ playername }}</div>} 
+                <div>{{ player.pseudo }}</div>} 
             @empty {<div>There are no items.</div>}
         </p-card>
-
-        
-
-
         <div>
             <p-button>Rejoindre</p-button>
         </div>

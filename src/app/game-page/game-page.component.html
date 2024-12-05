@@ -1,5 +1,5 @@
-@if(room.status===gameStatus.INGAME){
-<app-waiting-room-page></app-waiting-room-page>
+@if(room.status===gameStatus.WAITING||room.status===gameStatus.FULL){
+<app-waiting-room-page [room]="room"></app-waiting-room-page>
 }
 <div id="global">
     <div id="leftElement">
