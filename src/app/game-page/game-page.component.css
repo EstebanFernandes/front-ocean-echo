@@ -12,7 +12,6 @@
 }
 
 #rightElement{
-    gap:6px;
     position: absolute;
     right: 0;
 }
@@ -23,13 +22,15 @@
     bottom: 0;
     left: 50%; /* Position the element 50% from the left of the screen */
     transform: translateX(-50%); /* Adjust the element to be exactly centered */
+   
 }
 
 #image-back{
+    z-index: 0.5;
     position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the div */
+  transform: translate(-50%, -30%); /* Centers the div */
   background-color: rgba(255, 255, 255, 0.5); /* Optional background */
   padding: 10px;
   border-radius: 5px;

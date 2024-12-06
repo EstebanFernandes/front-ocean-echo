@@ -75,6 +75,69 @@ export class GamePageComponent {
       isTrue:false
     })
 
+    this.room.playerList.push({
+      id:0,
+      score:1,
+      pseudo:"Louis", //Answer text
+      //Resources handle by a player 
+      coral:100, // Resources
+      temperature:50, // Resources
+      salinity:100, // Resources
+      waste:200, // Resources
+      marinaFauna:30, // Resources
+      acidity:30, // Resources
+      clickerPoint:0,
+      researchPoint:0,
+      upgrades:[]
+    });
+    this.room.playerList.push({
+      id:1,
+      score:1,
+      pseudo:"Thomas", //Answer text
+      //Resources handle by a player 
+      coral:100, // Resources
+      temperature:50, // Resources
+      salinity:100, // Resources
+      waste:200, // Resources
+      marinaFauna:30, // Resources
+      acidity:30, // Resources
+      clickerPoint:0,
+      researchPoint:0,
+      upgrades:[]
+    });
+    this.room.playerList.push({
+      id:2,
+      score:1,
+      pseudo:"Esteban", //Answer text
+      //Resources handle by a player 
+      coral:100, // Resources
+      temperature:50, // Resources
+      salinity:100, // Resources
+      waste:200, // Resources
+      marinaFauna:30, // Resources
+      acidity:30, // Resources
+      clickerPoint:0,
+      researchPoint:0,
+      upgrades:[]
+    });
+    this.room.playerList.push({
+      id:2,
+      score:1,
+      pseudo:"Marc", //Answer text
+      //Resources handle by a player 
+      coral:100, // Resources
+      temperature:50, // Resources
+      salinity:100, // Resources
+      waste:200, // Resources
+      marinaFauna:30, // Resources
+      acidity:30, // Resources
+      clickerPoint:0,
+      researchPoint:0,
+      upgrades:[]
+    });
+
+
+
     this.computeEarthState()
   }
 
@@ -91,5 +154,6 @@ export class GamePageComponent {
   computePlayerScore()
   {
 
+   
   }
 }
