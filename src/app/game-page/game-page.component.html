@@ -1,17 +1,21 @@
 @if(room.status===gameStatus.WAITING||room.status===gameStatus.FULL){
-    <app-waiting-room-page [room]="room"></app-waiting-room-page>
+<app-waiting-room-page [room]="room"></app-waiting-room-page>
 } @else if (room.status===gameStatus.INGAME) {
-    <div id="global">
-        <div id="leftElement">
-            <app-upgrade></app-upgrade>
-        </div>
-        <div id="rightElement">
-            <app-other-players [playerList]="room.playerList"></app-other-players>
-        </div>
-        <div id="centerElement">
-            <app-stat-display></app-stat-display>
-            <div (click)="addClicker()">click Zone !! </div>
-            <app-quizz [currentQuestion]="question" [answers]="answer"></app-quizz>
+<div id="global">
+    <div id="leftElement">
+        <app-upgrade></app-upgrade>
+    </div>
+    <div id="rightElement">
+        <app-other-players [playerList]="room.playerList"></app-other-players>
+    </div>
+    <div id="centerElement">
+        <app-stat-display></app-stat-display>
+        <div (click)="addClicker()">click Zone !!
+            <img src="{{earthFile}}" id="image-back">
         </div>
     </div>
+    <div id="botElement">
+        <app-quizz [currentQuestion]="question" [answers]="answer"></app-quizz>
+    </div>
+</div>
 }

@@ -11,4 +11,5 @@ export interface Player {
     acidity:number; // Resources
     clickerPoint:number;
     researchPoint:number;
+    upgrades:Upgrade[];
 }
