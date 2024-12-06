@@ -1,0 +1,22 @@
+.info-row {
+    display: flex;
+    align-items: center; /* Vertically align the icon with the text */
+    gap: 8px;            /* Adds space between the icon and text */
+  }
+  
+  .icon {
+    width: 32px; /* Adjust the width as needed */
+    height: 32px; /* Keep the icon square, or use `auto` to maintain aspect ratio */
+    display: inline-block;
+  }
+
+
+  .upgrade-name {
+    font-weight: bold;
+    color: #333; /* Dark text for better readability */
+  }
+  
+  .upgrade-cost {
+    font-size: 12px;
+    color: #666; /* Subtle color for secondary information */
+  }

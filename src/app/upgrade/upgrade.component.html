@@ -1,1 +1,18 @@
-<p>upgrade works!</p>
+<p-card>
+    <div class="info-row">
+      <img src="assets/clicker.svg" class="icon" alt="Clicker Icon" />
+      <span>{{clickerPoints}}</span>
+    </div>
+    Améliorations:
+    @for(upgrade of nextUpgradesClicker;track upgrade)
+    {
+        <span class="upgrade-name">{{ upgrade.name }}</span>
+    <span class="upgrade-cost">Cost: {{ upgrade.baseCost }}</span>
+    }
+    <p-divider></p-divider>
+    <div class="info-row">
+      <img src="assets/flaskpng.png" class="icon" alt="Flask Icon" />
+      <span>{{researchPoints}}</span>
+    </div>
+    <p-divider></p-divider>
+  </p-card> 

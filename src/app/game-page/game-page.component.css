@@ -1,44 +1,46 @@
-#centerElement{
-    gap:6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-#leftElement{
-    gap:6px;
-    position: absolute;
-}
-
-#rightElement{
-    position: absolute;
-    right: 0;
-}
-
-#botElement{
-    gap:6px;
-    position: absolute;
-    bottom: 0;
-    left: 50%; /* Position the element 50% from the left of the screen */
-    transform: translateX(-50%); /* Adjust the element to be exactly centered */
-   
-}
 
 #image-back{
-    z-index: 0.5;
+ 
     position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -30%); /* Centers the div */
-  background-color: rgba(255, 255, 255, 0.5); /* Optional background */
+  
   padding: 10px;
   border-radius: 5px;
   text-align: center;
 
 }
+
+#labo{
+    z-index: 0.5;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%); /* Centers the div */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+
 img {
     display: block; /* Ensures the image doesn't have extra space below it */
     width: 100%; /* Make sure the image scales if needed */
     height: auto; /* Maintain the aspect ratio */
   }
+
+#center{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+#global{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
