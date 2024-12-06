@@ -4,7 +4,7 @@
         <div class="side">
             <h2>Créer</h2>
             <input type="text" placeholder="Pseudo" pInputText [(ngModel)]="nameHost" />
-            <p-button (onClick)="createRoom()">Créer</p-button>
+            <p-button (onClick)="createRoom(nameHost)">Créer</p-button>
         </div>
         <p-divider id="divider" layout="vertical"></p-divider>
         <div class="side">

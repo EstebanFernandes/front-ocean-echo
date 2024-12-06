@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
 import { Room } from '../models/room.model';
 import { FetchServiceService } from '../fetch-service.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-waiting-room-page',
@@ -16,7 +18,7 @@ import { FetchServiceService } from '../fetch-service.service';
 })
 export class WaitingRoomPageComponent {
 
-  constructor(public fetchService:FetchServiceService){
+  constructor(public fetchService:FetchServiceService,private http:HttpClient){
   }
   @Input() room!:Room;
   idRoom: number = 0
@@ -38,5 +40,15 @@ export class WaitingRoomPageComponent {
   }
   pauseWaitingRoom() {
     //logic to pause
+  }
+
+  
+
+  getRooms(): Observable<any> {
+    return this.http.get('http://yourapi.com/rooms');
+  }
+
+  joinRoom(name:string,roomId: string): Observable<any> {
+    return this.http.post('http://yourapi.com/joinRoom', { roomId });
   }
 }

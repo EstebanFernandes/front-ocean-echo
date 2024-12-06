@@ -7,6 +7,8 @@ import { QuizzComponent } from '../quizz/quizz.component';
 import { OtherPlayersComponent } from '../other-players/other-players.component';
 import { Room, gameStatus } from '../models/room.model';
 import { Answer, Question } from '../models/question.model';
+import { HttpClient } from '@angular/common/http';
+import { interval, Subscription } from 'rxjs';
 @Component({
   selector: 'app-game-page',
   standalone: true,
@@ -18,8 +20,7 @@ import { Answer, Question } from '../models/question.model';
 })
 
 export class GamePageComponent {
-  counter: number = 0;
-  clickerInterval: any;
+  gameInterval: Subscription = new Subscription;
   debutScore: number = 80;
   earthState: number = 0;
   maxEarthState: number = 5;
@@ -59,7 +60,7 @@ export class GamePageComponent {
   answer: Answer[] = []
   // Expose the enum to the template
   gameStatus = gameStatus;
-
+  constructor(private http: HttpClient) {}
   addClicker() {
     console.log("+1 click")
   }
@@ -169,4 +170,24 @@ export class GamePageComponent {
 
    
   }
+
+  startGame()
+  {
+    this.gameInterval = interval(1000).subscribe(() => {
+      this.updateScore();
+      this.sendGameData();
+    });
+  }
+
+    // Update score based on different stats
+    updateScore(): void {
+      // Logic to update score based on stats
+      
+    }
+  
+    // Send game data to the server
+    sendGameData(): void {
+      
+    }
+  
 }
