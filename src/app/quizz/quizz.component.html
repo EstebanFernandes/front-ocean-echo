@@ -1,1 +1,6 @@
-<p>quizz works!</p>
+{{currentQuestion.text}}
+@for (answer of answers; track answer)
+{
+    <div>{{answer.text}}</div>
+    <p-button label={{answer.text}} />
+}
