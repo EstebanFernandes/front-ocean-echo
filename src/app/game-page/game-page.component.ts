@@ -37,6 +37,6 @@ gameStatus = gameStatus;
   }
   ngOnInit()
   {
-
+  th
   }
 }

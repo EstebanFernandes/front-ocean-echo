@@ -6,7 +6,7 @@
             <app-upgrade></app-upgrade>
         </div>
         <div id="rightElement">
-            <app-other-players [playerList]="room.playerList"></app-other-players>
+            <app-other-players [playerId]="player.id"[playerList]="room.playerList"></app-other-players>
         </div>
         <div id="centerElement">
             <app-stat-display></app-stat-display>
