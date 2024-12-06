@@ -16,4 +16,8 @@ export class OtherPlayersComponent {
   @Input() playerList!:Player[]
   @Input() playerId!:number
   
+  getCalculatedValue(otherPlayer:Player): number
+  {
+    return 100 - 100 * otherPlayer.score * 0.0125
+  }
 }

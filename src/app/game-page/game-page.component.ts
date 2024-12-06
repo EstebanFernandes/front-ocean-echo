@@ -25,7 +25,21 @@ export class GamePageComponent {
   maxEarthState: number = 5;
   earthFile: string = "assets/terre" + this.earthState + ".png"
   playerName: string = "";
-  player!: Player;
+  player: Player={
+    id:0,
+    score:1,
+    pseudo:"Esteban", //Answer text
+    //Resources handle by a player 
+    coral:100, // Resources
+    temperature:50, // Resources
+    salinity:100, // Resources
+    waste:200, // Resources
+    marinaFauna:30, // Resources
+    acidity:30, // Resources
+    clickerPoint:0,
+    researchPoint:0,
+    upgrades:[]
+  }
   room: Room = {
     id: -1,
     status: gameStatus.INGAME,
@@ -121,7 +135,7 @@ export class GamePageComponent {
       upgrades:[]
     });
     this.room.playerList.push({
-      id:2,
+      id:3,
       score:1,
       pseudo:"Marc", //Answer text
       //Resources handle by a player 
@@ -135,7 +149,6 @@ export class GamePageComponent {
       researchPoint:0,
       upgrades:[]
     });
-
 
 
     this.computeEarthState()

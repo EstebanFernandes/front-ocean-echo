@@ -4,7 +4,7 @@
             @if(otherPlayers.id !== playerId){
                 <p-card header={{otherPlayers.pseudo}}>
                     <span id="label_status1">Score</span>
-                    <p-progressBar aria-labelledby="label_status1" [showValue]=false [style]="{ height: '6px' }"[value]= 100 - 100 * otherPlayers.score * 0.0125 />
+                    <p-progressBar aria-labelledby="label_status1" [showValue]=false [style]="{ height: '6px' }"[value]="getCalculatedValue(otherPlayers)" />
                     <span id="label_status2">Temperature</span>
                     <p-progressBar aria-labelledby="label_status2" [showValue]=false [style]="{ height: '6px' }"[value]= otherPlayers.temperature/>
                     <span id="label_status3">Salinité</span>
