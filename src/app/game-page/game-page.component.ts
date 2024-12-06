@@ -18,6 +18,8 @@ import { Answer, Question } from '../models/question.model';
 })
 
 export class GamePageComponent {
+  counter: number = 0;
+  clickerInterval: any;
   debutScore: number = 80;
   earthState: number = 0;
   maxEarthState: number = 5;
