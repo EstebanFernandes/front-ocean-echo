@@ -1,4 +1,4 @@
-interface Upgrade {
+export interface Upgrade {
     id: number;
     name: string;
     baseCost: number;

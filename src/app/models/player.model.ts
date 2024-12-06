@@ -1,3 +1,4 @@
+import { Upgrade } from "./upgrade.model";
 export interface Player {
     id:number;
     score:number;

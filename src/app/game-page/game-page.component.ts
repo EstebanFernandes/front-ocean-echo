@@ -51,22 +51,26 @@ export class GamePageComponent {
     this.answer.push({
       id: 0,
       text: "Toi",
-      questionId: 0
+      questionId:0,
+      isTrue:false
     })
     this.answer.push({
       id: 1,
       text: "Moi",
-      questionId: 0
+      questionId:0,
+      isTrue:false
     })
     this.answer.push({
       id: 2,
       text: "Tout",
-      questionId: 0
+      questionId:0,
+      isTrue:false
     })
     this.answer.push({
       id: 3,
       text: "ce qu'ils le veulent",
-      questionId: 0
+      questionId:0,
+      isTrue:false
     })
 
     this.computeEarthState()
@@ -84,6 +88,6 @@ export class GamePageComponent {
 
   computePlayerScore()
   {
-    
+
   }
 }
