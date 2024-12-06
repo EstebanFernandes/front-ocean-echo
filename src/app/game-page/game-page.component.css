@@ -1,5 +1,3 @@
-
-
 #image-back{
  
     position: absolute;
@@ -7,8 +5,9 @@
   left: 50%;
   transform: translate(-50%, -30%); /* Centers the div */
   
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 5px; 
   text-align: center;
 
 }
@@ -26,6 +25,7 @@
 }
 
 
+  
 img {
     display: block; /* Ensures the image doesn't have extra space below it */
     width: 100%; /* Make sure the image scales if needed */
@@ -38,6 +38,12 @@ img {
     justify-content: space-between;
     
 }
+
+app-quizz {
+  position: relative; /* S'assure que l'élément de la card reste visible */
+  z-index: 0.5; /* Place la card au-dessus du background */
+}
+
 #global{
     display:flex;
     flex-direction: row;

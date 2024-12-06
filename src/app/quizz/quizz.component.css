@@ -36,3 +36,6 @@
     font-weight: bold;
 }
 
+.p-card{
+    z-index: 1.5;
+}
