@@ -22,9 +22,21 @@ export class WaitingRoomPageComponent {
   idRoom: number = 0
   playerList: string[]  = []
   hostId: number = 0
-  playerId: number = 1
+  playerId: number = 0
 
   ngOnInit(){
     this.playerList = ['malo', "antoine"]
+  }
+  startGame() {
+    if (this.playerList.length > 0) {
+
+      //logic to start
+    }
+  }
+  quitWaitingRoom() {
+    //logic to quit
+  }
+  pauseWaitingRoom() {
+    //logic to pause
   }
 }
