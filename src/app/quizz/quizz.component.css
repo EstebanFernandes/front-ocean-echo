@@ -1,0 +1,38 @@
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes de largeur égale */
+    gap: 10px; /* Espacement entre les boutons */
+    width: 400px; /* Largeur totale de la grille */
+    margin: auto; /* Centrer la grille sur la page */
+}
+
+.button-grid p-button:nth-child(odd) {
+    justify-self: end; /* Boutons 1 et 3 alignés à droite */
+}
+
+.button-grid p-button:nth-child(even) {
+    justify-self: start; /* Boutons 2 et 4 alignés à gauche */
+}
+
+.question-container {
+    display: flex; /* Active Flexbox pour aligner horizontalement */
+    align-items: center; /* Centre verticalement le texte */
+    justify-content: space-between; /* Ajuste l'espace entre les éléments si nécessaire */
+    gap: 1rem; /* Ajoute un espacement entre la question et la réponse */
+}
+
+.current-question {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.success {
+    color: rgb(15, 239, 15);
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+

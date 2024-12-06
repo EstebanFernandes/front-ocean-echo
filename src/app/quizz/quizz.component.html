@@ -1,6 +1,31 @@
-{{currentQuestion.text}}
-@for (answer of answers; track answer)
-{
-    <div>{{answer.text}}</div>
-    <p-button label={{answer.text}} />
-}
+<div class="question-container">
+    <p class="current-question">
+        {{ currentQuestion.text }}
+    </p>
+    <p *ngIf="hasAnswer" [class.success]="reply === 'Bien joué !'" [class.error]="reply === 'Perdu...'">
+        {{ reply }}
+    </p>
+</div>
+
+<div class="button-grid">
+    <!-- Boucle pour générer les boutons dynamiquement -->
+    @for (answer of answers; track answer)
+    {
+        @if(!hasAnswer)
+        {
+            <p-button 
+            label="{{answer.text}}" 
+            id="{{answer.id}}" 
+            (onClick)="answerClick(answer)" 
+        ></p-button>
+        }@else {
+
+            <p-button 
+                label="{{answer.text}}" 
+                id="{{answer.id}}" 
+                (onClick)="answerClick(answer)" 
+                [severity]="(answer.isTrue) ? 'success':'danger' "
+            ></p-button>
+        }
+    }
+</div>
