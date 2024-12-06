@@ -21,7 +21,7 @@ export class GamePageComponent {
   player!:Player; 
   room: Room = {
     id: -1,
-    status:gameStatus.WAITING,
+    status:gameStatus.INGAME,
     hostPlayerId: -1,
     playerList: [],
     startTime: new Date(),
