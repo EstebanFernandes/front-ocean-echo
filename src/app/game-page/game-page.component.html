@@ -1,8 +1,7 @@
-@if(room!==null){
-  
 
+@if(room!==undefined){
     @if(room.status===gameStatus.WAITING||room.status===gameStatus.FULL){
-    <app-waiting-room-page [room]="room"></app-waiting-room-page>
+    <app-waiting-room-page [room]="room"  (onStatusUpdate)="fetchRoomInfo(player.id)"></app-waiting-room-page>
     } @else if (room.status===gameStatus.INGAME) {
 
     <div id="global">
@@ -22,7 +21,6 @@
         <div>
             <app-other-players [playerId]="player.id" [playerList]="room.playerList"></app-other-players>
         </div>
-
     </div>
     }
 }

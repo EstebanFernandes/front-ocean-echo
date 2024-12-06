@@ -1,6 +1,6 @@
 import { Upgrade } from "./upgrade.model";
 export interface Player {
-    id:number;
+    id:string;
     score:number;
     pseudo:string; //Answer text
     //Resources handle by a player 

@@ -5,7 +5,7 @@ import { GamePageComponent } from './game-page/game-page.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomePageComponent },
-  { path: 'room/:idRoom', component: GamePageComponent},
+  { path: 'room/:roomId', component: GamePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirection par défaut
   { path: '**', redirectTo: '/home' } // Gestion des routes non trouvées
 ];

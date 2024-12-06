@@ -1,13 +1,14 @@
 import { Player } from "./player.model";
 
 export interface Room {
-    id:number;
+    id:string;
     status:gameStatus;
-    hostPlayerId:number;
+    hostPlayerId:string;
     playerList:Player[]
     startTime:Date;
     endTime:Date;
-    pastQuestionId:number[]
+    pastQuestionId:number[],
+    playerCount:number
 }
 
 export enum gameStatus {
