@@ -11,7 +11,7 @@
         <div id="centerElement">
             <app-stat-display></app-stat-display>
             <div (click)="addClicker()">click Zone !! </div>
-            <app-quizz></app-quizz>
+            <app-quizz [currentQuestion]="question" [answers]="answer"></app-quizz>
         </div>
     </div>
 }

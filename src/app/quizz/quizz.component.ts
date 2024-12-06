@@ -14,7 +14,7 @@ import { Question, Answer } from '../models/question.model';
 })
 
 export class QuizzComponent {
-  @Input() cursrentQuetion!:Question; 
+  @Input() currentQuestion!:Question; 
   @Input() answers!:Answer[]; 
   @Output() chooseAnswer = new EventEmitter<Answer>();
 }

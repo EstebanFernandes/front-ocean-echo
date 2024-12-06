@@ -6,6 +6,7 @@ import { UpgradeComponent } from '../upgrade/upgrade.component';
 import { QuizzComponent } from '../quizz/quizz.component';
 import { OtherPlayersComponent } from '../other-players/other-players.component';
 import { Room,gameStatus } from '../models/room.model';
+import { Answer,Question } from '../models/question.model';
 @Component({
   selector: 'app-game-page',
   standalone: true,
@@ -14,7 +15,6 @@ import { Room,gameStatus } from '../models/room.model';
   templateUrl: './game-page.component.html',
   styleUrl: './game-page.component.css'
 })
-
 
 export class GamePageComponent {
   playerName:string="";
@@ -28,6 +28,14 @@ export class GamePageComponent {
     endTime: new Date(),
     pastQuestionId: []
   };
+  question:Question=
+  {
+    id:0,
+    text:"Qui est cocu ?",
+    correctAnswerId:3,
+    reward:2
+  };
+  answer:Answer[]=[]
 // Expose the enum to the template
 gameStatus = gameStatus;
 
@@ -37,6 +45,25 @@ gameStatus = gameStatus;
   }
   ngOnInit()
   {
-  th
+    this.answer.push({
+      id:0,
+      text: "Toi",
+      questionId:0
+    })
+    this.answer.push({
+      id:1,
+      text: "Moi",
+      questionId:0
+    })
+    this.answer.push({
+      id:2,
+      text: "Tout",
+      questionId:0
+    })
+    this.answer.push({
+      id:3,
+      text: "ce qu'ils le veulent",
+      questionId:0
+    })
   }
 }
