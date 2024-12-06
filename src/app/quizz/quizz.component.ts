@@ -9,7 +9,7 @@ import { Question, Answer } from '../models/question.model';
 @Component({
   selector: 'app-quizz',
   standalone: true,
-  imports: [CommonModule, InputTextModule, ButtonModule, FormsModule, DividerModule,CardModule],
+  imports: [CommonModule, InputTextModule, ButtonModule, FormsModule, DividerModule, CardModule],
   templateUrl: './quizz.component.html',
   styleUrl: './quizz.component.css'
 })
@@ -17,6 +17,7 @@ import { Question, Answer } from '../models/question.model';
 export class QuizzComponent {
   @Input() currentQuestion!:Question; 
   @Input() answers!:Answer[]; 
+  @Input() isVisible:boolean=true;
   @Output() chooseAnswer = new EventEmitter<Answer>();
   hasAnswer:boolean=false;
   reply:string="";
