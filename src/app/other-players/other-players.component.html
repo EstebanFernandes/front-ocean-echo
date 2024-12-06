@@ -1,18 +1,28 @@
 <div class="global">
-    @for(otherPlayers of playerList; track otherPlayers; let idx = $index;) {
-        @if(otherPlayers.id !== playerId){
-            <p-card header={{otherPlayers.pseudo}}>
-                <div>score: {{otherPlayers.score}}</div>
-                <div>temperature: {{otherPlayers.temperature}}</div>
-                <div>salinity: {{otherPlayers.salinity}}</div>
-                <div>coral: {{otherPlayers.coral}}</div>
-                <div>salinity: {{otherPlayers.salinity}}</div>
-                <div>waste: {{otherPlayers.waste}}</div>
-                <div>marinaFauna: {{otherPlayers.marinaFauna}}</div>
-                <div>acidity: {{otherPlayers.acidity}}</div>
-            </p-card>
-        }
-        } @empty {
-        <li>There are no items.</li>
-        }
+    <p-scrollPanel [style]="{ width: '100%', height: '100%' }" styleClass="custombar1">
+        @for(otherPlayers of playerList; track otherPlayers; let idx = $index;) {
+            @if(otherPlayers.id !== playerId){
+                <p-card header={{otherPlayers.pseudo}}>
+                    <span id="label_status1">Score</span>
+                    <p-progressBar aria-labelledby="label_status1" [showValue]=false [style]="{ height: '6px' }"[value]= 100 - 100 * otherPlayers.score * 0.0125 />
+                    <span id="label_status2">Temperature</span>
+                    <p-progressBar aria-labelledby="label_status2" [showValue]=false [style]="{ height: '6px' }"[value]= otherPlayers.temperature/>
+                    <span id="label_status3">Salinité</span>
+                    <p-progressBar aria-labelledby="label_status3" [showValue]=false [style]="{ height: '6px' }"[value]=otherPlayers.salinity/>
+                    <span id="label_status4">Corail</span>
+                    <p-progressBar aria-labelledby="label_status4" [showValue]=false [style]="{ height: '6px' }"[value]=otherPlayers.coral/>
+                    <span id="label_status5">Dechet</span>
+                    <p-progressBar aria-labelledby="label_status5" [showValue]=false [style]="{ height: '6px' }"[value]=otherPlayers.waste/>
+                    <span id="label_status6">Faune Marine</span>
+                    <p-progressBar aria-labelledby="label_status6" [showValue]=false [style]="{ height: '6px' }"[value]=otherPlayers.marinaFauna/>
+                    <span id="label_status7" >Acidité</span>
+                    <p-progressBar aria-labelledby="label_status7" [showValue]=false [style]="{ height: '6px' }"[value]=otherPlayers.acidity/>
+                    
+                </p-card>
+            }
+            } @empty {
+            <li>There are no items.</li>
+            }
+    </p-scrollPanel>
+    
 </div>
