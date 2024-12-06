@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { DividerModule } from 'primeng/divider';
 import { CardModule } from 'primeng/card';
 import { HttpClientModule, HttpClient } from '@angular/common/http'; // Import HttpClient and HttpClientModule
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,16 +24,22 @@ export class HomePageComponent {
   nameJoin: string = ""
   nameIdJoin: string = ""
 
-constructor(private http:HttpClient){}
+constructor(private http:HttpClient, private router: Router){}
 
   createRoom(name: string) {
     this.http.post('http://oceans4.ydns.eu:8080/createRoom', {
       pseudo: name
     }).subscribe({
-      next: (response) => {
+      next: (response:any) => {
         console.log('Room created successfully:', response);
         console.log(response)
-        // Handle the response here (e.g., navigate to a new page, update UI)
+        const roomId = response.roomId;  // Ensure this is the correct property from the response
+          if (roomId) {
+            // Navigate to the room join page
+            this.router.navigate([`/room/${roomId}`]);
+          } else {
+            console.error('Room ID is not available in the response');
+          }
       },
       error: (error) => {
         console.error('Error creating room:', error);
@@ -47,7 +54,7 @@ constructor(private http:HttpClient){}
         next: (response) => {
           console.log('Room created successfully:', response);
           console.log(response)
-          // Handle the response here (e.g., navigate to a new page, update UI)
+          
         },
         error: (error) => {
           console.error('Error creating room:', error);

@@ -41,15 +41,7 @@ export class GamePageComponent {
     researchPoint:0,
     upgrades:[]
   }
-  room: Room = {
-    id: -1,
-    status: gameStatus.INGAME,
-    hostPlayerId: -1,
-    playerList: [],
-    startTime: new Date(),
-    endTime: new Date(),
-    pastQuestionId: []
-  };
+  room: Room | null = null;
   question: Question =
     {
       id: 0,
@@ -65,100 +57,22 @@ export class GamePageComponent {
     console.log("+1 click")
   }
   ngOnInit() {
-    this.answer.push({
-      id: 0,
-      text: "Toi",
-      questionId:0,
-      isTrue:false
-    })
-    this.answer.push({
-      id: 1,
-      text: "Moi",
-      questionId:0,
-      isTrue:false
-    })
-    this.answer.push({
-      id: 2,
-      text: "Tout",
-      questionId:0,
-      isTrue:false
-    })
-    this.answer.push({
-      id: 3,
-      text: "ce qu'ils le veulent",
-      questionId:0,
-      isTrue:false
-    })
-
-    this.room.playerList.push({
-      id:0,
-      score:1,
-      pseudo:"Louis", //Answer text
-      //Resources handle by a player 
-      coral:100, // Resources
-      temperature:50, // Resources
-      salinity:100, // Resources
-      waste:200, // Resources
-      marinaFauna:30, // Resources
-      acidity:30, // Resources
-      clickerPoint:0,
-      researchPoint:0,
-      upgrades:[]
-    });
-    this.room.playerList.push({
-      id:1,
-      score:1,
-      pseudo:"Thomas", //Answer text
-      //Resources handle by a player 
-      coral:100, // Resources
-      temperature:50, // Resources
-      salinity:100, // Resources
-      waste:200, // Resources
-      marinaFauna:30, // Resources
-      acidity:30, // Resources
-      clickerPoint:0,
-      researchPoint:0,
-      upgrades:[]
-    });
-    this.room.playerList.push({
-      id:2,
-      score:1,
-      pseudo:"Esteban", //Answer text
-      //Resources handle by a player 
-      coral:100, // Resources
-      temperature:50, // Resources
-      salinity:100, // Resources
-      waste:200, // Resources
-      marinaFauna:30, // Resources
-      acidity:30, // Resources
-      clickerPoint:0,
-      researchPoint:0,
-      upgrades:[]
-    });
-    this.room.playerList.push({
-      id:3,
-      score:1,
-      pseudo:"Marc", //Answer text
-      //Resources handle by a player 
-      coral:100, // Resources
-      temperature:50, // Resources
-      salinity:100, // Resources
-      waste:200, // Resources
-      marinaFauna:30, // Resources
-      acidity:30, // Resources
-      clickerPoint:0,
-      researchPoint:0,
-      upgrades:[]
-    });
-
-
+    
     this.computeEarthState()
+  }
+
+
+  fetchRoomInfo()
+  {
+
+    
+
   }
 
   computeEarthState() {
     // Exemple de score actuel du joueur
-    //let currentScore: number = this.player.score; // Score actuel du joueur
-    let currentScore = 40
+    let currentScore: number = this.player.score; // Score actuel du joueur
+    
     // Calcul de l'état en fonction du score actuel
     this.earthState = Math.min(Math.floor(((this.debutScore - currentScore) / this.debutScore) * this.maxEarthState), this.maxEarthState - 1);
     this.earthFile="assets/terre"+this.earthState+".png"
