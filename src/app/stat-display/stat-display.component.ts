@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Player } from '../models/player.model';
 
 @Component({
   selector: 'app-stat-display',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './stat-display.component.css'
 })
 export class StatDisplayComponent {
-
+  namePictures = ["score","temperature","salinity","coral","waste","marinaFaune","acidity"]
+  @Input() player!:Player;
 }
